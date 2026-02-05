@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Quieres ser mi San Valentín? 💛</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #ffe6f0, #ffd1dc 40%, #ffc2d1 70%, #ffb3c6);
+      background-attachment: fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.95);
+      padding: 2.5rem 2rem;
+      border-radius: 28px;
+      box-shadow: 0 25px 60px rgba(255, 105, 135, 0.25);
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      animation: floatIn 1s ease-out;
+      backdrop-filter: blur(4px);
+    }
+
+    .top-img {
+      width: 120px;
+      margin-bottom: 1rem;
+    }
+
+    .mid-img {
+      width: 140px;
+      margin: 1.5rem auto;
+      display: block;
+    }
+
+    h1 {
+      color: #e63946;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #444;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .yes {
+      background: #e63946;
+      color: white;
+      box-shadow: 0 10px 20px rgba(230,57,70,0.4);
+    }
+
+    .no {
+      background: #f1f1f1;
+      color: #555;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 24px rgba(0,0,0,0.15);
+    }
+
+    .response {
+      margin-top: 1.2rem;
+      font-size: 1.2rem;
+      color: #e63946;
+      display: none;
+    }
+
+    .yes-img {
+      width: 180px;
+      margin: 1.2rem auto 0;
+      display: none;
+      animation: popIn 0.6s ease-out;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.7); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="file:///C:/Users/USUARIO/Downloads/propuesta/imagen1.png.png" alt="Parejita" class="top-img" />
+    <h1>¿Quieres ser mi San Valentín? 💛</h1>
+    <p>
+      ACEPTA O LLORO PIPIPI (Te reto a que le des que no)
+    </p>
+
+    <img src="file:///C:/Users/USUARIO/Downloads/propuesta/imagen2.png.png" alt="Flores" class="mid-img" />
+
+    <div class="buttons">
+      <button class="yes" onclick="sayYes()">Siiiiiiiii </button>
+      <button class="no" onclick="moveNo(this)">No :(</button>
+    </div>
+
+    <div class="response" id="response">Sabía que dirías que sí <br>Nos vemos el 14 bebé 🫦</div>
+    <img src="file:///C:/Users/USUARIO/Downloads/propuesta/imagen3.png.png" alt="Foca con rosas" class="yes-img" id="yesImg" />
+
+    <footer>
+      iiiiii manca no le pudiste dar al no JA JA JA,<br />
+     Tu negrito lo hizo con dedicacion <3
+    </footer>
+  </div>
+
+  <script>
+    function sayYes() {
+      const response = document.getElementById('response');
+      const yesImg = document.getElementById('yesImg');
+      response.style.display = 'block';
+      yesImg.style.display = 'block';
+    }
+
+    function moveNo(btn) {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+</body>
+</html>
